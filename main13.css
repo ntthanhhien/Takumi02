@@ -1,0 +1,65 @@
+* {
+    padding-bottom: 9px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url(https://www.hinhnenemail.com/files/winter/67/top.gif);
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.form-title {
+    border: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 26px;
+    color: rgb(157, 48, 154);
+    background-color: rgb(238, 204, 231);
+    border-top-style: solid 1px white;
+    border-right-style: solid;
+    border-bottom-style: solid 30px white;
+    border-left-style: solid;
+}
+
+.container {
+    background: rgb(205, 205, 205);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px white;
+}
+
+.a {
+    width: 300px;
+}
+
+label,
+span,
+input {
+    font-weight: 800;
+    color: rgb(29, 31, 31);
+}
+
+.submit-box {
+    text-align: center;
+}
+
+.p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.p:hover {
+    color: brown;
+    background-color: rgb(157, 106, 180);
+}
