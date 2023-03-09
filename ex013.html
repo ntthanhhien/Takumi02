@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="ex013.css">
+</head>
+
+<body>
+    <div class="title">
+        <h2>アンケート</h2>
+    </div><br>
+
+    <div class="form1">
+        <p><b>講義についてのアンケート</b></p>
+        <form action="https://vti.com.vn">
+            <dl><label for="fname">氏名</label><br>
+            <input class="a" type="text" name="name"><br></dl>
+            <dl><label for="lname">住所</label><br>
+            <input class="a" type="text" name="adress"><br></dl>
+            <dl><label for="sex">性別</label><br>
+            <input type="radio" value="M"> 男
+            <input type="radio" value="F"> 女<br></dl>
+            <dl><label for="lname">講座名</label><br>
+                <select class="a" name="data">
+                    <option value="">選択なし</option>
+                    <option value="database">データーベース基礎</option>
+                    <option value="network">ネットワーク基礎</option>
+                    <option value="java">Java基礎</option>
+                </select>
+            </dl>
+                <dl><label for="feel">感想</label><br>
+                <textarea class="a" rows="3" cols="25"></textarea><br>
+                <div class="button">
+                    <input class="send" type="submit" value="送信">
+                </div>
+        </form>
+    </div>
+</body>
+
+</html>
