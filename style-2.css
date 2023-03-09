@@ -1,0 +1,25 @@
+html {
+    font-family: arial, sans-serif;
+    position: relative;
+    min-height: 200px;
+    background-color: antiquewhite;
+}
+.sub-paragraph{
+    padding-left: 20px;
+}
+a:hover{
+    color: yellow;
+}
+h1{ 
+    color:midnightblue;
+    font-weight: bold;
+}
+h2{ 
+    color:darkred;
+    font-weight: bold;
+}
+a{
+    text-decoration: underline; 
+}
+
+

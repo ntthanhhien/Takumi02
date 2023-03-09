@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hien_1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>14章異常レベルとトランザクション分離レベル</h1>
+
+    <div>
+        <h2>14.1異常レベル</h2>
+        <div>
+            <p>複数のトランザクションが同時に実行された場合、データの矛盾が起きえる。矛盾の種類は以下の通り。これらは必ず起こるわけではなく、トランザクションに設定した分離レベルによって、発生を抑制することができる。<br>
+                <b>ダーティリード</b><br>
+                同時に実行されている他のトランザクションが更新中の（未だコミットしていない）データを読み込んでしまう。 <br>
+                <b>反復不能読み取り</b><br>
+                一度読み込んだデータを再度読み込んだ際に違ったデータを読み込んでしまう。他のトランザクションの更新に対するコミット前後のデータを読み込むことで発生する。<br>
+                <b>ファントムリード</b> <br>
+                一度検索した条件と同じ検索を再度行った際に、レコードが増えたり減ったりしてしまう。他のトランザクションの追加、削除に対するコミット前後の検索を行うことで発生する。<br>
+            </p>
+        </div>
+    </div>
+    <div>
+        <h2>14.2トランザクション分離レベル</h2>
+        <p>
+        <h3>表14.1 トランザクション分離レベルの一覧</h3>
+        <div>
+            <table>
+                <tr>
+                    <th>分離レベル</th>
+                    <th>ダーティリード</th>
+                    <th>反復不能読み取り</th>
+                    <th>ファントムリード</th>
+                </tr>
+                <tr>
+                    <td>READ UNCOMMITED</td>
+                    <td>可能性あり</td>
+                    <td>可能性あり</td>
+                    <td>可能性あり</td>
+                </tr>
+                <tr>
+                    <td>READ COMMITED</td>
+                    <td>安全</td>
+                    <td>可能性あり</td>
+                    <td>可能性あり</td>
+                </tr>
+                <tr>
+                    <td>REPEATABLE READ</td>
+                    <td>安全</td>
+                    <td>安全</td>
+                    <td>可能性あり</td>
+                </tr>
+                <tr>
+                    <td>SERIALIZABLE</td>
+                    <td>安全</td>
+                    <td>安全</td>
+                    <td>安全</td>
+                </tr>
+            </table>
+        </div>
+        <p>※PostgreSQLはREAD UNCOMMITEDはREAD COMMITEDとして処理される。</p>
+        </p>
+    </div>
+
+    <div class="paragraph">
+        <h2 class="sub-title">14.3参考</h2>
+        <p>
+            <a
+                href="http://www.postgresql.jp/document/9.1/html/transaction-iso.html">http://www.postgresql.jp/document/9.1/html/transaction-iso.html</a>
+            <br>
+            <a href="http://www.postgresql.jp/document/9.1/html/sql-set-transaction.html ">http://www.postgresql.jp/document/9.1/html/sql-set-transaction.html
+            </a>
+        </p>
+    </div>
+
+</body>
+
+<footer>
+    <p>Copyright(C) XXX</p>
+</footer>
+
+</html>

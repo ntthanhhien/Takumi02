@@ -1,0 +1,19 @@
+html {
+    font-family: arial, sans-serif;
+    position: relative;
+    min-height: 200px;
+    background-color: lightskyblue;
+}
+
+h1 {
+    border-left: 10px solid darkblue;
+}
+  
+table, td, th {
+    border: 1px solid black;
+    text-align: left;
+}
+
+a:hover{
+    color: greenyellow;
+}

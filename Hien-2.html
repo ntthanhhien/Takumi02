@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-2.css">
+
+</head>
+
+<body>
+    <h1>1章Firebugを利用して通信内容を見てみる</h1>
+    <div>
+        <h2>1.1Firebugのセットアップ</h2>
+        <p>
+        <div>これからブラウザがどのように通信しているかを調べるため、FirefoxとFirebugをインストールする。</div>
+        <div>Firefox Setup 13.0.1.exeを実行してインストールする。</div>
+        <div>インストールが終わったらFirefoxを起動し、firebug-1.9.2-fx.xpiをFirefoxのウィンドウにドラッグアンドドロップする。</div>
+        <div>FirebugはF12キーを押すと表示される。今回はFirefoxの通信内容を見たいのでネットタブを押下する。</div>
+        </p>
+    </div>
+    <div>
+        <h2>1.2通信の内容を表示する</h2>
+        <div>アドレスバーに下記URLを入力してEnterキーを押す。</div>
+        <li>文部科学省</li>
+        <a href="http://www.mext.go.jp/">http://www.mext.go.jp/</a>
+        <div>大量の通信が実行されているのがわかる。</div>
+        <a
+            href="www.mext.go.jpのヘッダをクリックする">www.mext.go.jpのヘッダをクリックする。</a>レスポンスヘッダとリクエストヘッダの「ソースを表示」をクリックする。レスポンスヘッダとリクエストヘッダの「ソースを表示」をクリックする。
+    </div>
+    <div>
+        <h2>1.3ここまでのまとめ</h2>
+        <div>ここまで何が起きているかを順を追って理解する。</div>
+        <ol>
+            <li>ユーザがURL(<a href="http://www.mext.go.jp/">http://www.mext.go.jp/</a>)を入力してエンターキーを押す。</li>
+            <li>ブラウザはWEBサーバに対してリクエストを送信する。</li>
+            <li>WEBサーバはブラウザに対してレスポンスを送信する。</li>
+            <li>ブラウザは受信したhtmlファイルを表示する。</li>
+        </ol>
+    </div>
+    <div>
+        <h2>1.4教室内のWEBサーバとの通信</h2>
+        <div>インターネットのサイトでのやり取りを見ると通信が複雑なので、ここからは、教室内でWEBサーバを起動してやり取りを確認する。まずは、講師のWEBサーバにアクセスする。</div>
+        <div>ブラウザに下記を入力する。</div>
+        <a href="http://XXX.XXX.XXX.XXX/">http://XXX.XXX.XXX.XXX/</a>
+        <div>※XXXの部分は講師に指定されたのもを指定する。</div>
+        <div>下記ページが表示される。</div>
+        <p>XXX.XXX.XXX.XXXで表現される文字列をIPアドレスという。IPアドレスは通信機器に付与するアドレスである。通常はOSに設定する。Windowsの場合はコマンドプロンプトで「ipconfig」というコマンドを実行すると、
+            設定されたIPアドレスをアドレスを確認できる。</p>
+        <div>次に受講生のマシンにWEBサーバをインストールし、受講生がWEBサーバを公開してアクセスしてみる。</div>
+
+    </div>
+    <div>
+        <h2>1.5WEBサーバのインストールと起動</h2>
+        <div>ここではanhttpdという簡易的なWEBサーバを使う。httpd142p.exeを実行する。ダイアログにはc:\anhttpdと入力してUnzipボタンを押下する。</div>
+
+        <div class="image">
+            <a href="C:\anhttpd\httpd.exe">C:\anhttpd\httpd.exe</a>を実行する。
+        </div>
+    </div>
+    <div>
+        <h2>1.6WEBサーバを設定する</h2>
+        <div>タスクトレイのhttpdをクリックする。</div>
+        <div>[オプション]-[一般]
+            <span>をクリックする</span>
+        </div>
+        <div>ドキュメントルートに「c:\anhttpd\docroot」と入力してOKボタンを押下する。</div>
+    </div>
+    <div>
+        <h2>1.7公開するページを作成する</h2>
+        <div>c:\anhttpd\docroot\index.htmlを下記内容で作成する。</div>
+        <div>&lthtml&gt;</div>
+        <div>&ltbody&gt;</div>
+        <div>hello my name is [あなたの名前]</div>
+        <div>&lt/body&gt;</div>
+        <div>&lt/html&gt;</div>
+    </div>
+    <div>
+        <h2>1.8WEBサーバにアクセスする</h2>
+        <div>コマンドプロンプトを開いて「ipconig」を実行する。</div>
+        <div>Wireless LAN adapter ワイヤレス ネットワーク接続:</div>
+        <div class="sub-paragraph">接続固有の DNS サフィックス . . . :</div>
+        <div class="sub-paragraph">IPv4 アドレス . . . . . . . . . . : 192.168.1.103</div>
+        <div class="sub-paragraph">サブネット マスク . . . . . . . . : 255.255.255.0</div>
+        <div class="sub-paragraph"> デフォルト ゲートウェイ . . . . . : 192.168.1.99</div>
+        <div>イーサネット アダプター ローカル エリア接続:</div>
+        <div class="sub-paragraph">メディアの状態. . . . . . . . . . : メディアは接続されていません</div>
+        <div class="sub-paragraph"> 接続固有の DNS サフィックス . . . :</div>
+        <div>PCに複数のLANアダプタがある場合、上記のように複数の接続が表示される。使っている方のIPアドレスを確認して、隣の人に教え、隣同士で確認しあう。</div>
+    </div>
+</body>
+
+</html>
